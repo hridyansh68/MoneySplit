@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://hridyansh68.github.io/moneysplit",
+  "contributors": [{
+    "name" : "Rishabh Tripathi",
+    "email": "imrist@gmail.com",
+    "url" : "https://ristri.com"
+  },{
+    "name": "Hridyansh Sahu",
+    "email": "hridyanshsahu68@gmail.com",
+    "url": "http://hridyashsahu.com"
+  }],
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
