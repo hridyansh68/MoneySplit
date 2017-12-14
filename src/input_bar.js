@@ -1,10 +1,11 @@
 import React, {Component } from 'react';
+import {List} from './list'
 
 class InputBar  extends Component {
     
     constructor(props){
     	super(props);
-    	this.state = { term:''};
+		this.state = { term:'',items :[] };
     	this.changeHandler = this.changeHandler.bind(this);
     	this.clickHandler = this.clickHandler.bind(this);
     }
@@ -15,12 +16,11 @@ changeHandler(event){
 }
 
 clickHandler(){
-      if (this.state.term=="")
+      if (this.state.term==="")
       { alert("Please enter the name");}
       else{
-      this.props.myList.addItem(this.state.term);
-      this.setState({term : ""});
-      console.log(this.props.myList);
+	  this.props.myList.addItem(this.state.term);
+	  this.setState({term : "",items : [...this.state.items, this.state.term]});
       }
       
       
@@ -30,13 +30,16 @@ clickHandler(){
 	render() {
 		return (
 	<div>
-	<label>Name of participant:
+	<label>Name of Participant:
 	<input 
 	value={this.state.term}
 	onChange={this.changeHandler} />
 	</label>
-	<button onClick={this.clickHandler} >Add more</button>
-	</div>) ;
+	<button onClick={this.clickHandler} >Add More</button>
+	<List ranV={this.state.items}/>	
+	</div>
+	
+) ;
 	
 	}
 
