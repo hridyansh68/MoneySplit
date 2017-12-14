@@ -7,7 +7,10 @@ import registerServiceWorker from './registerServiceWorker';
 const list={
 	listItem : [],
 	addItem : function (newData){
-		this.listItem.push(newData);
+		this.listItem.push(newData);	
+	},
+	deleteItem : function(position){
+		this.listItem.splice(position,1);
 	}
 	
 };
@@ -15,3 +18,8 @@ const list={
 
 ReactDOM.render(<App myList={list} />, document.getElementById('root'));
 registerServiceWorker();
+setTimeout(
+	function() 
+	{
+	  console.log(list.listItem);
+	}, 30000);

@@ -29,7 +29,7 @@ clickHandler(){
 
 	render() {
 		const listItem = this.state.items.map((item,i) =>
-		<List key={i} dispItem={item}/>);
+		<List key={i} dispItem={item} myList={this.props.myList} pos={i}/> );
 		return (
 	<div>
 	<label>Name of Participant:
