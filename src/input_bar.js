@@ -28,6 +28,8 @@ clickHandler(){
       
 
 	render() {
+		const listItem = this.state.items.map((item,i) =>
+		<List key={i} dispItem={item}/>);
 		return (
 	<div>
 	<label>Name of Participant:
@@ -36,7 +38,11 @@ clickHandler(){
 	onChange={this.changeHandler} />
 	</label>
 	<button onClick={this.clickHandler} >Add More</button>
-	<List ranV={this.state.items}/>	
+	<ul>
+		{
+			listItem
+		}
+	</ul>
 	</div>
 	
 ) ;
