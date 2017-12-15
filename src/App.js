@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <InputBar/>
+        <InputBar myList={this.props.myList}/>
       </div>
     );
   }
