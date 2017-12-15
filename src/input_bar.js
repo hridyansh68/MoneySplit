@@ -5,12 +5,22 @@ import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 
 const styleInput={
-	width : "96%",
-	display: "inline-block"
+	width : "75%",
+	display: "block",
+	margin: "auto"
+	
 };
 const styleButton={
-	display: "inline-block"
+	display: "block",
+	margin: "auto"
 };
+const divStyle={
+	display: "block",
+	width :"80%",
+	position : "relative",
+	margin : "auto"
+	
+}
 
 
 class InputBar  extends Component {
@@ -45,8 +55,12 @@ clickHandler(){
 		return (
 	<div>
 	<Container>
+	<div style={divStyle}>
 	<Input style={styleInput}   label="Enter Name"  floatingLabel={true} value={this.state.term} onChange={this.changeHandler}/>
+	<br/>
 	<Button style={styleButton}  variant="fab" size="small" color="primary" onClick={this.clickHandler}>+</Button>
+	<br/>
+	</div>
 	</Container>
 		{
 			listItem
