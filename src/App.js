@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import InputBar from './input_bar.js';
+import Container from 'muicss/lib/react/container';
 import DropdownBar from './dropdown_bar.js';
 import FinalPage from './final_page.js';
-class App extends React.Component {
+import Button from 'muicss/lib/react/button';
+
+const ButtonStyle={
+    display : 'block',
+    marginLeft:"auto",
+     marginRight:"auto"
+  };
+
+class App extends Component {
    
     constructor(props){
     	super(props);
@@ -22,26 +31,37 @@ class App extends React.Component {
    if(this.state.clickCheck ===0)
    { 
       return (
-         <div className="App">
+         <Container>         
+             <div className="App">
             <InputBar myList={this.props.myList}/>
-            <button onClick={this.clickHandler}>Next</button>
+            <Button style={ButtonStyle} variant="raised" color="primary" onClick={this.clickHandler}>Next</Button>
          </div>
+         </Container>
+
+        
              );
     }
    else if(this.state.clickCheck ===1)
     {
       return (
+        <Container>
+        
         <div className="App2">
           <DropdownBar/>
-          <button onClick={this.clickHandler}>Next</button>
-        </div>);
+          <Button style={ButtonStyle} variant="raised" color="primary" onClick={this.clickHandler}>Next</Button>
+        </div>
+        </Container>)
+        ;
      }
     else if(this.state.clickCheck ===2)
     {  
         return (
+            <Container>           
         <div className="App3">
           <FinalPage/>
-        </div>);
+        </div>
+        </Container>
+    );
     }
      }
 }

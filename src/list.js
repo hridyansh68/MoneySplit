@@ -1,4 +1,12 @@
 import React from 'react';
+import Panel from 'muicss/lib/react/panel';
+import Clear from 'react-icons/lib/md/clear';
+
+const ClearStyle={
+  display : 'block',
+  marginLeft:"auto",
+   marginRight:"0"
+};
 
 export class List extends React.Component{
   constructor(props){
@@ -14,10 +22,10 @@ export class List extends React.Component{
     if(this.state.showList){
     return(
   <div>
-    <li>
-      {this.props.dispItem}
-      <button onClick={this.hideList}>Delete</button>
-    </li>
+    <Panel>
+      <span>{this.props.dispItem} </span>
+      <Clear style={ClearStyle} color="primary" onClick={this.hideList}/>
+    </Panel>
   </div>);
   }
   else

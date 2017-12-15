@@ -1,5 +1,17 @@
 import React, {Component } from 'react';
-import {List} from './list'
+import {List} from './list';
+import Container from 'muicss/lib/react/container';
+import Input from 'muicss/lib/react/input';
+import Button from 'muicss/lib/react/button';
+
+const styleInput={
+	width : "96%",
+	display: "inline-block"
+};
+const styleButton={
+	display: "inline-block"
+};
+
 
 class InputBar  extends Component {
     
@@ -32,24 +44,17 @@ clickHandler(){
 		<List key={i} dispItem={item} myList={this.props.myList} pos={i}/> );
 		return (
 	<div>
-	<label>Name of Participant:
-	<input 
-	value={this.state.term}
-	onChange={this.changeHandler} />
-	</label>
-	<button onClick={this.clickHandler} >Add More</button>
-	<ul>
+	<Container>
+	<Input style={styleInput}   label="Enter Name"  floatingLabel={true} value={this.state.term} onChange={this.changeHandler}/>
+	<Button style={styleButton}  variant="fab" size="small" color="primary" onClick={this.clickHandler}>+</Button>
+	</Container>
 		{
 			listItem
 		}
-	</ul>
 	</div>
 	
-) ;
+) ;}
 	
 	}
-
-
-}
 
 export default InputBar;
