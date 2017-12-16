@@ -5,18 +5,13 @@ import Button from 'muicss/lib/react/button';
 import {DropdownList} from './dropdown_bar_list.js';
 
 
-const transactionObject = {
-      nameofpayee:"",
-      amount:0,
-      paidfor:[]
-    };
 
 
 class DropdownBar extends React.Component{
     
      constructor(props){
       super(props);
-      this.state = {transactionList:[]};
+      this.state = {nameofpayee:"",amount:0,paidfor:[],transactionList:[]};
       this.valueChangeHandler1 = this.valueChangeHandler1.bind(this);
       this.valueChangeHandler2 = this.valueChangeHandler2.bind(this);
       this.valueChangeHandler3 = this.valueChangeHandler3.bind(this);
@@ -27,22 +22,27 @@ class DropdownBar extends React.Component{
     
   
     valueChangeHandler1(value){
-            transactionObject.nameofpayee = value.label;
+            this.setState({nameofpayee: value.label});
           
     }
 
     valueChangeHandler2(event){
-            transactionObject.amount = event.target.value;
+      this.setState({amount:event.target.value});
        
     }
 
     valueChangeHandler3(value){
-            transactionObject.paidfor = value.map((item)=>item.label);
+      this.setState({paidfor:value.map((item)=>item.label)});
          
     }
 
     clickHandler(){
-      this.setState({transactionList:[...this.state.transactionList, transactionObject]});
+      const transactionObject={
+        nameofpayee : this.state.nameofpayee,
+        amount : this.state.amount,
+        paidfor : this.state.paidfor
+      }
+      this.setState({nameofpayee:'',amount:0,paidfor:[], transactionList:[...this.state.transactionList, transactionObject]});
      
       console.log(this.state.transactionList);
       
