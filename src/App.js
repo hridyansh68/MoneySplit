@@ -47,7 +47,7 @@ class App extends Component {
         <Container>
         
         <div className="App2">
-          <DropdownBar myList={this.props.myList}/>
+          <DropdownBar myList={this.props.myList} />
           <Button style={ButtonStyle} variant="raised" color="primary" onClick={this.clickHandler}>Next</Button>
         </div>
         </Container>)

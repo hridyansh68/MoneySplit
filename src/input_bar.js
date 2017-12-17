@@ -43,7 +43,7 @@ clickHandler(){
       else{
 	  this.props.myList.addItem(this.state.term);
 	  this.setState({term : "",items : [...this.state.items, this.state.term]});
-      }
+	 }
       
       
 }
