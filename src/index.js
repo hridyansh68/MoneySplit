@@ -5,6 +5,13 @@ import 'react-selectize/themes/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+const finalList = {
+	listItem : [],
+	addItem : function (newData){
+		this.listItem.push(newData);	
+	}
+};
+
 const list={
 	listItem : [],
 	addItem : function (newData){
@@ -17,10 +24,4 @@ const list={
 };
 
 
-ReactDOM.render(<App myList={list} />, document.getElementById('root'));
-registerServiceWorker();
-setTimeout(
-	function() 
-	{
-	  console.log(list.listItem);
-	}, 30000);
+ReactDOM.render(<App myList={list} finalList = {finalList}/>, document.getElementById('root'));

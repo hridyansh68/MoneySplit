@@ -42,9 +42,9 @@ class DropdownBar extends React.Component{
         amount : this.state.amount,
         paidfor : this.state.paidfor
       }
+      this.props.finalList.addItem(transactionObject);
       this.setState({nameofpayee:'',amount:0,paidfor:[], transactionList:[...this.state.transactionList, transactionObject]});
-     
-      console.log(this.state.transactionList);
+      
       
     }
 
