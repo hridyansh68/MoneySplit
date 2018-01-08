@@ -52,7 +52,7 @@ class DropdownBar extends React.Component{
         paidfor : this.state.paidfor
       }
       this.props.finalList.addItem(transactionObject);
-      this.setState({nameofpayee:'',amount:0,paidfor:[], transactionList:[...this.state.transactionList, transactionObject]});
+      this.setState({amount:0, transactionList:[...this.state.transactionList, transactionObject]});
      
       
       
@@ -70,7 +70,7 @@ class DropdownBar extends React.Component{
             )}
             onValueChange = {this.valueChangeHandler1} style={dropStyle}
         />
-        <Input label="Enter Expense" floatingLabel={true} type="number" onChange={this.valueChangeHandler2}/>
+        <Input label="Enter Expense" floatingLabel={true} type="number" value={this.state.amount} onChange={this.valueChangeHandler2}/>
         <MultiSelect
             placeholder = "Select Names"
             options = {this.props.myList.listItem.map(
