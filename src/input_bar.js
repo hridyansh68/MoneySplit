@@ -1,5 +1,6 @@
 import React, {Component } from 'react';
 import {List} from './list';
+import Panel from 'muicss/lib/react/panel';
 import Container from 'muicss/lib/react/container';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
@@ -54,13 +55,16 @@ clickHandler(){
 		<List key={i} dispItem={item} myList={this.props.myList} pos={i}/> );
 		return (
 	<div>
+	
 	<Container>
+	<Panel>
 	<div style={divStyle}>
 	<Input style={styleInput}   label="Enter Name"  floatingLabel={true} value={this.state.term} onChange={this.changeHandler}/>
 	<br/>
 	<Button style={styleButton}  variant="fab" size="small" color="primary" onClick={this.clickHandler}>+</Button>
 	<br/>
 	</div>
+	</Panel>
 	</Container>
 		{
 			listItem

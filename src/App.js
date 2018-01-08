@@ -55,7 +55,7 @@ class App extends Component {
           for( j=i+1;j<cL.length;j++)
           {
                if(cL[i][1]>this.state.calculationList[j][1])
-                { var tem = cL[i];
+                { tem = cL[i];
                   cL[i]=cL[j];
                   cL[j]=tem;
                 }
@@ -93,7 +93,7 @@ class App extends Component {
                    acceptingPeople[i][1]=0;
                   }
                 else if(tem>0)
-                {   var p = (payingPeople[j][1]*-1);
+                {   p = (payingPeople[j][1]*-1);
                     payingPeople[j].push([acceptingPeople[i][0],p]);
                     payingPeople[j][1]=0;
                     j++;
@@ -117,7 +117,7 @@ class App extends Component {
           payingPeople[i].splice(1,1);
         }
 
-        this.state.payingList = payingPeople;
+        this.setState({payingList :payingPeople});
         console.log(this.state.payingList);
         
       }

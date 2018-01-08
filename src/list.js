@@ -7,6 +7,9 @@ const ClearStyle={
   marginLeft:"auto",
    marginRight:"0"
 };
+const Align = {
+  textAlign : "center"
+};
 
 export class List extends React.Component{
   constructor(props){
@@ -23,7 +26,7 @@ export class List extends React.Component{
     return(
   <div>
     <Panel>
-      <span>{this.props.dispItem} </span>
+     <div style={Align}> <span>{this.props.dispItem} </span></div>
       <Clear style={ClearStyle} color="primary" onClick={this.hideList}/>
     </Panel>
   </div>);

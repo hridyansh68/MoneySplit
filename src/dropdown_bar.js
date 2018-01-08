@@ -3,7 +3,16 @@ import {ReactSelectize, SimpleSelect, MultiSelect} from 'react-selectize';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import {DropdownList} from './dropdown_bar_list.js';
+import Panel from 'muicss/lib/react/panel';
 
+const dropStyle = {
+  display : "inline-block",
+  width : "100%"
+};
+const styleButton={
+	display: "block",
+	margin: "auto"
+};
 
 
 
@@ -44,6 +53,7 @@ class DropdownBar extends React.Component{
       }
       this.props.finalList.addItem(transactionObject);
       this.setState({nameofpayee:'',amount:0,paidfor:[], transactionList:[...this.state.transactionList, transactionObject]});
+     
       
       
     }
@@ -52,12 +62,13 @@ class DropdownBar extends React.Component{
 
    render(){
   
-     return (<div><SimpleSelect
+     return (<div>
+       <Panel><SimpleSelect
             placeholder = "Select Name"
             options = {this.props.myList.listItem.map(
               (name,i) => ({label: name, value: i})
             )}
-            onValueChange = {this.valueChangeHandler1}
+            onValueChange = {this.valueChangeHandler1} style={dropStyle}
         />
         <Input label="Enter Expense" floatingLabel={true} type="number" onChange={this.valueChangeHandler2}/>
         <MultiSelect
@@ -65,11 +76,12 @@ class DropdownBar extends React.Component{
             options = {this.props.myList.listItem.map(
               (name,i) => ({label: name, value: i})
             )}
-            onValuesChange = { this.valueChangeHandler3 }
+            onValuesChange = { this.valueChangeHandler3 } style={dropStyle}
         />
-        <Button onClick={this.clickHandler}>Submit transaction</Button>
+        <br/><br/>
+        <Button style={styleButton}  variant="fab" size="small" color="primary" onClick={this.clickHandler}>+</Button>
+        </Panel>
         <DropdownList listToPrint={this.state.transactionList} />
-        
         </div>);}
       
       }
