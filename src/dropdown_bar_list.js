@@ -11,7 +11,7 @@ export class DropdownList extends React.Component{
 	render(){
 
 		const temp = this.props.listToPrint.map((item)=>
-	<div style={divStyle}><Panel>{item.nameofpayee} paid {item.amount} for <DropdownSpan list={item.paidfor} /></Panel></div>)	;
+	<div style={divStyle}><Panel>{item.nameofpayee} paid &#8377;{item.amount} for <DropdownSpan list={item.paidfor} /></Panel></div>)	;
 			if(this.props.listToPrint.length === 0){
 			return (
 				<div>

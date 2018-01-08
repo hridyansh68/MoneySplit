@@ -70,6 +70,7 @@ class DropdownBar extends React.Component{
             )}
             onValueChange = {this.valueChangeHandler1} style={dropStyle}
         />
+        <br/><br/>
         <Input label="Enter Expense" floatingLabel={true} type="number" value={this.state.amount} onChange={this.valueChangeHandler2}/>
         <MultiSelect
             placeholder = "Select Names"

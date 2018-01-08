@@ -14,6 +14,10 @@ const ButtonStyle={
     textAlign : "center"
     
   }
+  const fontStyle = {
+    textAlign : "center",
+    fontFamily: "'Pacifico', cursive"
+  }
 // "position: absolute; top: 0; left: 0; border: 0;"
 const imgStyle={
   position : "absolute",
@@ -139,6 +143,11 @@ class App extends Component {
    { 
       return (
         <div>
+          <div style={fontStyle}>
+            <h1>MoneySplit</h1>
+              <h4>Easiest way to split your bills.</h4>
+              <br/>
+            </div>
           <a href="https://github.com/hridyanshsahu/MoneySplit"><img style={imgStyle} src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"/></a>
          <Container>         
              <div className="App">
@@ -146,6 +155,7 @@ class App extends Component {
             <Button style={ButtonStyle} variant="raised" color="primary" onClick={this.clickHandler}>Next</Button>
          </div>
          </Container>
+         <br/>
          <div style={divStyle}>Developed by <a href="http://hridyanshsahu.com">Hridyansh Sahu</a> and <a href="https://ristri.com">Rishabh Tripathi</a>.</div>
          </div>
         
@@ -155,6 +165,11 @@ class App extends Component {
     {
       return (
         <div>
+           <div style={fontStyle}>
+            <h1>MoneySplit</h1>
+              <h4>Easiest way to split your bills.</h4>
+              <br/>
+            </div>
         <Container>
         
         <div className="App2">
@@ -162,6 +177,7 @@ class App extends Component {
           <Button style={ButtonStyle} variant="raised" color="primary" onClick={this.clickHandler}>Next</Button>
         </div>
         </Container>
+        <br/>
         <div style={divStyle}>Developed by <a href="http://hridyanshsahu.com">Hridyansh Sahu</a> and <a href="https://ristri.com">Rishabh Tripathi</a>.</div>
         </div>)
         ;
@@ -170,11 +186,17 @@ class App extends Component {
     {  
         return (
           <div>
+             <div style={fontStyle}>
+            <h1>MoneySplit</h1>
+              <h4>Easiest way to split your bills.</h4>
+              <br/>
+            </div>
             <Container>           
         <div className="App3">
           <FinalPage payingList={this.state.payingList}/>
         </div>
         </Container>
+        <br/>
         <div style={divStyle}>Developed by <a href="http://hridyanshsahu.com">Hridyansh Sahu</a> and <a href="https://ristri.com">Rishabh Tripathi</a>.</div>
         </div>
     );
